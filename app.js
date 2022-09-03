@@ -1,9 +1,30 @@
 
-let listaComponentes = prompt(`Que desea?:
+let inputOpciones = prompt(`Que desea?:
 1.componentes
 2.computador`); 
 
-switch (listaComponentes) {
+
+function opcionValida(inputOpciones) {
+    if (inputOpciones == "1, 2") {
+        return true
+    } else if (inputOpciones === null || inputOpciones === "" || inputOpciones === isNaN);{
+        return false
+    }
+}
+
+while (!opcionValida(inputOpciones)) {
+    inputOpciones = prompt("Entre una opcion valida: "); 
+        break;
+}
+
+while (null(inputOpciones) || " "(inputOpciones) || isNaN(inputOpciones)){
+    inputOpciones = prompt("Entre una opcion valida: "); 
+    break;
+}
+
+opcionValida(inputOpciones)
+
+switch (inputOpciones) {
     case "1":
         alert("has seleccionado componentes")
             let componenetesDisp = prompt(`Los componentes disponibles son:
