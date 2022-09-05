@@ -1,29 +1,25 @@
 
 let inputOpciones = prompt(`Que desea?:
-1.componentes
-2.computador`); 
+    1.componentes
+    2.computador`); 
 
 
 function opcionValida(inputOpciones) {
-    if (inputOpciones == "1, 2") {
+    if (inputOpciones == 1 || inputOpciones == 2) {
         return true
     } else if (inputOpciones === null || inputOpciones === "" || inputOpciones === isNaN);{
         return false
     }
-}
-
-while (!opcionValida(inputOpciones)) {
-    inputOpciones = prompt("Entre una opcion valida: "); 
-        break;
-}
-
-while (null(inputOpciones) || " "(inputOpciones) || isNaN(inputOpciones)){
-    inputOpciones = prompt("Entre una opcion valida: "); 
-    break;
-}
+}   
 
 opcionValida(inputOpciones)
 
+while (!opcionValida(inputOpciones)) {
+        inputOpciones = prompt(`Entre una opcion valida :
+            1.componentes
+            2.computador` );   
+            
+            
 switch (inputOpciones) {
     case "1":
         alert("has seleccionado componentes")
@@ -56,7 +52,7 @@ switch (inputOpciones) {
                     break;
                 }
     default:
-        alert("no has seleccionado una opcion valida")
-        break;
-}
+        
+        }
+    }        
 
