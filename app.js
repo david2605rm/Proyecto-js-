@@ -1,8 +1,20 @@
 
-let inputOpciones = prompt(`Que desea?:
-    1.componentes
-    2.computador`); 
+//DEclaracion de funciones
+function pedirNombre(){
+    let nombre = prompt("Bienvenidos a Dragon Azul, Quien nos visita?");
+    console.log(nombre)
+    alert(`Hola, ${nombre.toUpperCase()}. Adelante, explora todas nuestras opciones`)
+};
 
+function agregaComponentes (nombre,precio){
+    this.nombre = nombre
+    this.precio = precio
+    this.disponibilidad = true
+};
+
+const motherboard = new agregaComponentes ("Tarjeta madre", 950000)
+const grafics = new agregaComponentes ("Tarjeta grafica", 1350000)
+const refrigliquid = new agregaComponentes ("Refrigeracion liquida", 700000)
 
 function opcionValida(inputOpciones) {
     if (inputOpciones == 1 || inputOpciones == 2) {
@@ -10,7 +22,17 @@ function opcionValida(inputOpciones) {
     } else if (inputOpciones === null || inputOpciones === "" || inputOpciones === isNaN);{
         return false
     }
-}   
+};  
+
+function despedida() {
+    alert(
+        "Gracias por visitarnos y/o comprar con nosotros " + nombre.toUpperCase() + " , Vuelva pronto"
+    )
+};
+
+pedirNombre();
+
+let inputOpciones = prompt(`Que desea?: \n 1.componentes \n 2.computador`);
 
 opcionValida(inputOpciones)
 
@@ -29,13 +51,13 @@ switch (inputOpciones) {
             3.refrigeracion liquida`);
                 switch (componenetesDisp) {
                     case "1":
-                        alert("su valor es 950.000 cop");
+                        console.log(motherboard)
                     break;
                     case "2":
-                        alert("su valor es 1.350.000 cop");
+                        console.log(grafics)
                     break;
                     case "2":
-                        alert("su valor es 700.000 cop");
+                        console.log(refrigliquid)
                     break;
                 }
         break;
@@ -50,9 +72,10 @@ switch (inputOpciones) {
                 } else{
                     alert("procesaremos tu solicitud")
                     break;
-                }
+                };
     default:
         
-        }
-    }        
+        };
+    };        
 
+despedida();
