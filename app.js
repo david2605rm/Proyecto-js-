@@ -1,21 +1,5 @@
 
 //DEclaracion de funciones
-function pedirNombre(){
-    let nombre = prompt("Bienvenidos a Dragon Azul, Quien nos visita?");
-    console.log(nombre)
-    alert(`Hola, ${nombre.toUpperCase()}. Adelante, explora todas nuestras opciones`)
-};
-
-function agregaComponentes (nombre,precio){
-    this.nombre = nombre
-    this.precio = precio
-    this.disponibilidad = true
-};
-
-const motherboard = new agregaComponentes ("Tarjeta madre", 950000)
-const grafics = new agregaComponentes ("Tarjeta grafica", 1350000)
-const refrigliquid = new agregaComponentes ("Refrigeracion liquida", 700000)
-
 function opcionValida(inputOpciones) {
     if (inputOpciones == 1 || inputOpciones == 2) {
         return true
@@ -26,38 +10,51 @@ function opcionValida(inputOpciones) {
 
 function despedida() {
     alert(
-        "Gracias por visitarnos y/o comprar con nosotros " + nombre.toUpperCase() + " , Vuelva pronto"
+        `Gracias por visitarnos y/o comprar con nosotros "  ${nombre}  " , Vuelva pronto`
     )
 };
 
-pedirNombre();
 
-let inputOpciones = prompt(`Que desea?: \n 1.componentes \n 2.computador`);
+const productos = [
+    {id: 1, nombre: "Tarjeta Madre", precio: 950000, stock:20},
+    {id: 2, nombre: "Tarjeta Grafica", precio: 1350000, stock:50},
+    {id: 3, nombre: "Refrigeracion liquida", precio: 700000, stock:15},
+]
+
+let nombre = prompt("Bienvenidos a Dragon Azul, Quien nos visita?");
+
+alert (`Hola, ${nombre.toUpperCase()}. Adelante, explora todas nuestras opciones`)
+
+let inputOpciones = prompt(`Que desea?: 
+    1.componentes 
+    2.computador`);
 
 opcionValida(inputOpciones)
 
 while (!opcionValida(inputOpciones)) {
+    alert(`${nombre} has ingresado una opcion incorrecta`)
         inputOpciones = prompt(`Entre una opcion valida :
             1.componentes
             2.computador` );   
-            
+    };              
             
 switch (inputOpciones) {
     case "1":
         alert("has seleccionado componentes")
             let componenetesDisp = prompt(`Los componentes disponibles son:
-            1.tarjeta madre
-            2.tarjeta de video
-            3.refrigeracion liquida`);
+                ${productos.map(producto => {
+                    return `n°${producto.id} : ${producto.nombre} \n`
+                })}
+            `);
                 switch (componenetesDisp) {
-                    case "1":
-                        console.log(motherboard)
+                    case (productos.id === 1):
+                        console.log(productos.precio, productos.nombre) 
                     break;
-                    case "2":
-                        console.log(grafics)
+                    case (productos.id === 2):
+                        console.log(productos.precio, productos.nombre)
                     break;
-                    case "2":
-                        console.log(refrigliquid)
+                    case (productos.id === 3):
+                        console.log(productos.precio, productos.nombre)
                     break;
                 }
         break;
@@ -66,8 +63,8 @@ switch (inputOpciones) {
             let computador = prompt(`Que quieres hacer:
             A.Cotizar computador
             B.Realizar una consulta`);
-                if (computador === "a") {
-                    alert("Pronto nos comunicaremos contigo")
+                if (computador === "a", "A") {
+                    alert(`Pronto nos comunicaremos contigo ${nombre}`)
                     break;
                 } else{
                     alert("procesaremos tu solicitud")
@@ -75,7 +72,6 @@ switch (inputOpciones) {
                 };
     default:
         
-        };
-    };        
+        };     
 
 despedida();
