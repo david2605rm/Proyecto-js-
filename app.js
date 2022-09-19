@@ -1,4 +1,4 @@
-
+/*
 //DEclaracion de funciones
 function opcionValida(inputOpciones) {
     if (inputOpciones == 1 || inputOpciones == 2) {
@@ -75,3 +75,15 @@ switch (inputOpciones) {
         };     
 
 despedida();
+*/
+
+const productos = [
+    {id: 1, nombre: "Tarjeta Madre Asus", precio: 950000, stock:20},
+    {id: 2, nombre: "Tarjeta Madre Msi", precio: 1250000, stock:10},
+    {id: 3, nombre: "Tarjeta Grafica 3080", precio: 3250000, stock:4},
+    {id: 4, nombre: "Tarjeta Grafica 2060", precio: 1400000, stock:16},
+    {id: 5, nombre: "Refrigeracion liquida corsair", precio: 600000, stock:15},
+    {id: 6, nombre: "Refrigeracion liquida nzxt", precio: 1000000, stock:5},
+]
+
+

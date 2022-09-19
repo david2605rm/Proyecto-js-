@@ -1,0 +1,46 @@
+
+.header{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.main{
+    display: flex;
+    justify-content: space-around;
+}
+
+.size-img{
+    width: 20em;
+    height: 20em;
+}
+
+.center-card{
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+}
+
+.title{
+    text-align: center;
+    font-family: $anton;
+    margin-top: 3%;
+    font-size: 3em;
+    color: $color-3;
+}
+
+.sub-titles{
+    text-align: center;
+    font-family: $montserrat;
+    font-size: 1.5em;
+}
+
+.button{
+    margin: 5% 2%;
+    font-family: $code;
+    background-color: $color-3;
+    color: white;
+    border: 0em;
+    font-size: 1.5em;
+    border-radius: 5em;
+}
