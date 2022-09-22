@@ -8,11 +8,7 @@ function opcionValida(inputOpciones) {
     }
 };  
 
-function despedida() {
-    alert(
-        `Gracias por visitarnos y/o comprar con nosotros "  ${nombre}  " , Vuelva pronto`
-    )
-};
+
 
 
 const productos = [
@@ -77,13 +73,58 @@ switch (inputOpciones) {
 despedida();
 */
 
+//functions
+/*
+function despedida() {
+    alert(
+        `Gracias por visitarnos y/o comprar con nosotros "  ${nombre}  " , Vuelva pronto`
+    )
+};
+let nombre = prompt("Bienvenidos a Dragon Azul, Quien nos visita?");
+
+alert (`Hola, ${nombre.toUpperCase()}. Adelante, explora todas nuestras opciones`)
+*/
+
 const productos = [
-    {id: 1, nombre: "Tarjeta Madre Asus", precio: 950000, stock:20},
-    {id: 2, nombre: "Tarjeta Madre Msi", precio: 1250000, stock:10},
-    {id: 3, nombre: "Tarjeta Grafica 3080", precio: 3250000, stock:4},
-    {id: 4, nombre: "Tarjeta Grafica 2060", precio: 1400000, stock:16},
-    {id: 5, nombre: "Refrigeracion liquida corsair", precio: 600000, stock:15},
-    {id: 6, nombre: "Refrigeracion liquida nzxt", precio: 1000000, stock:5},
+    {id: 1, nombre: "Tarjeta Madre Asus", precio: 950000, stock:20, img: `../MultiMedia/asus-prime.jpg`},
+    {id: 2, nombre: "Tarjeta Madre Msi", precio: 1250000, stock:10, img: `../MultiMedia/msi-z590.png`},
+    {id: 3, nombre: "Tarjeta Grafica 3080", precio: 3250000, stock:4, img: `../MultiMedia/3080-Ti-1.jpg`},
+    {id: 4, nombre: "Tarjeta Grafica 2060", precio: 1400000, stock:16, img: `../MultiMedia/tv-2060.jpg`},
+    {id: 5, nombre: "Refrigeracion liquida corsair", precio: 600000, stock:15, img: `../MultiMedia/corsair-cool.jpg`},
+    {id: 6, nombre: "Refrigeracion liquida nzxt", precio: 1000000, stock:5, img: `../MultiMedia/nzxt-cool.jpg`},
 ]
+
+const bloqueProductos = document.getElementById('contenedor-productos')
+
+
+
+let carrito = []
+
+productos.forEach((producto) => {
+    const contProducto = document.createElement('div')
+    contProducto.classList.add('contenedorProducto')
+    contProducto.innerHTML = `
+    <h4 class="title">${producto.nombre}</h4>
+    <img class="imgProducts" src=${producto.img} alt="">
+    <p class="price">Precio:$ ${producto.precio}</p>
+    <button id="agregar${producto.id}" class="button">Añadir al carrito</button>
+    `
+
+    bloqueProductos.appendChild(contProducto)
+
+    const boton = document.getElementById(`agregar${producto.id}`)
+
+    boton.addEventListener('click', () => {
+        addtocart(producto.id)
+    })
+
+})
+
+const addtocart = (prodId) => {
+    const items = productos.find((prod) => prod.id === prodId)
+    carrito.push(items)
+    console.log(carrito)
+}
+
 
 

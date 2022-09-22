@@ -1,8 +1,8 @@
 nav {
-    background-color: #6FBFBF;
+    background-color: $color-1;
     div{
         img{
-            width: 10%;
+            width: 8%;
         }
     }
     div{
@@ -14,6 +14,9 @@ nav {
                     font-family: 'Source Code Pro', monospace;
                     font-weight: 300;
                     color: white;
+                    :hover{
+                        font-size: 2.2em;
+                    }
                 }
             }
         }

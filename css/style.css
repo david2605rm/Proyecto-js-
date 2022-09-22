@@ -2,23 +2,36 @@
 nav {
   background-color: #6FBFBF; }
   nav div img {
-    width: 10%; }
+    width: 8%; }
   nav div ul li a {
     font-size: 2em;
     font-family: 'Source Code Pro', monospace;
     font-weight: 300;
     color: white; }
+    nav div ul li a :hover {
+      font-size: 2.2em; }
+
+.nav-fixed {
+  overflow: auto; }
 
 .header {
   display: flex;
   flex-flow: column;
-  justify-content: center; }
+  justify-content: center;
+  padding-top: 3%; }
+
+.contenedorProducto {
+  max-width: 30%;
+  padding: 2%;
+  margin: 2%; }
 
 .main {
   display: flex;
-  justify-content: space-around; }
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between; }
 
-.size-img {
+.imgProducts {
   width: 20em;
   height: 20em; }
 
@@ -31,7 +44,7 @@ nav {
   text-align: center;
   font-family: "Anton", sans-serif;
   margin-top: 3%;
-  font-size: 3em;
+  font-size: 2em;
   color: #025940; }
 
 .sub-titles {
@@ -47,6 +60,46 @@ nav {
   border: 0em;
   font-size: 1.5em;
   border-radius: 5em; }
+
+.productsName {
+  font-family: "Anton", sans-serif;
+  font-size: 1.5em;
+  text-align: center; }
+
+.price {
+  font-size: "Montserrat", sans-serif;
+  font-size: 1.2em;
+  text-align: left; }
+
+.logo {
+  width: 10%; }
+
+#botonCompra {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1.5em;
+  background-color: #6FBFBF; }
+
+.boton {
+  margin: 2% 2%;
+  color: white;
+  border: 0em; }
+
+.carrito {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1em; }
+
+footer {
+  background-color: #6FBFBF; }
+  footer aside {
+    display: flex;
+    justify-content: center; }
+  footer div {
+    flex-direction: column; }
+    footer div p {
+      text-align: center;
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.5em; }
 
 body {
   margin: 0;

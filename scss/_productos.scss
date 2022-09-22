@@ -1,16 +1,28 @@
+.nav-fixed{
+    overflow: auto;
+}
 
 .header{
     display: flex;
     flex-flow: column;
     justify-content: center;
+    padding-top: 3%;
+}
+
+.contenedorProducto{
+    max-width: 30%;
+    padding: 2%;
+    margin: 2%;
 }
 
 .main{
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
 }
 
-.size-img{
+.imgProducts{
     width: 20em;
     height: 20em;
 }
@@ -25,7 +37,7 @@
     text-align: center;
     font-family: $anton;
     margin-top: 3%;
-    font-size: 3em;
+    font-size: 2em;
     color: $color-3;
 }
 
@@ -44,3 +56,43 @@
     font-size: 1.5em;
     border-radius: 5em;
 }
+
+.productsName{
+    font-family: $anton;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.price{
+    font-size: $montserrat;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.logo{
+    width: 10%;
+}
+
+//carrito
+
+#botonCompra{
+    font-family: $code;
+    font-size: 1.5em;
+    background-color: $color-1;
+}
+
+.boton{
+    margin: 2% 2%;
+    color: white;
+    border: 0em;
+}
+
+.carrito{
+    font-family: $code;
+    font-size: 1em;
+}
+
+
+
+
+
