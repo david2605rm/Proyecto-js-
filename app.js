@@ -96,7 +96,7 @@ const productos = [
 
 const bloqueProductos = document.getElementById('contenedor-productos')
 
-
+const carritoContenedor = document.getElementById('carrito-cont')
 
 let carrito = []
 
@@ -123,7 +123,30 @@ productos.forEach((producto) => {
 const addtocart = (prodId) => {
     const items = productos.find((prod) => prod.id === prodId)
     carrito.push(items)
+    subirCompra()
     console.log(carrito)
+}
+
+const quitarProducto = (prodId) => {
+    const items = carrito.find((prod) => prod.id === prodId)
+    const indice = carrito.indexOf(items)
+    carrito.splice(indice, 1)
+    subirCompra()
+}
+
+const subirCompra = () => {
+    carritoContenedor.innerHTML = ""
+
+    carrito.forEach((prod) => {
+        const div = document.createElement('div')
+        div.className = ('productoCarrito')
+        div.innerHTML = `
+        <p>${prod.nombre}</p>
+        <p> Precio: ${prod.precio}</p>
+        <button onclick="quitarProducto(${prod.id})" class="botonProducto"><i class="fa fa-trash"></button>
+        `
+        carritoContenedor.appendChild(div)
+    })
 }
 
 

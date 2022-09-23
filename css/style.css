@@ -88,6 +88,16 @@ nav {
   font-family: "Source Code Pro", monospace;
   font-size: 1em; }
 
+.productoCarrito {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row; }
+
+.botonProducto {
+  width: 10%;
+  color: #025940;
+  border: 0em; }
+
 footer {
   background-color: #6FBFBF; }
   footer aside {

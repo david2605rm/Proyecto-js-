@@ -92,6 +92,18 @@
     font-size: 1em;
 }
 
+.productoCarrito{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.botonProducto{
+    width: 10%;
+    color: $color-3;
+    border: 0em;
+}
+
 
 
 
