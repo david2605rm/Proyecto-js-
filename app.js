@@ -85,21 +85,37 @@ let nombre = prompt("Bienvenidos a Dragon Azul, Quien nos visita?");
 alert (`Hola, ${nombre.toUpperCase()}. Adelante, explora todas nuestras opciones`)
 */
 
+//constantes
 const productos = [
-    {id: 1, nombre: "Tarjeta Madre Asus", precio: 950000, stock:20, img: `../MultiMedia/asus-prime.jpg`},
-    {id: 2, nombre: "Tarjeta Madre Msi", precio: 1250000, stock:10, img: `../MultiMedia/msi-z590.png`},
-    {id: 3, nombre: "Tarjeta Grafica 3080", precio: 3250000, stock:4, img: `../MultiMedia/3080-Ti-1.jpg`},
-    {id: 4, nombre: "Tarjeta Grafica 2060", precio: 1400000, stock:16, img: `../MultiMedia/tv-2060.jpg`},
-    {id: 5, nombre: "Refrigeracion liquida corsair", precio: 600000, stock:15, img: `../MultiMedia/corsair-cool.jpg`},
-    {id: 6, nombre: "Refrigeracion liquida nzxt", precio: 1000000, stock:5, img: `../MultiMedia/nzxt-cool.jpg`},
+    {id: 1, nombre: "Tarjeta Madre Asus", precio: 950000, stock:20, cantidad:1, img: `../MultiMedia/asus-prime.jpg`},
+    {id: 2, nombre: "Tarjeta Madre Msi", precio: 1250000, stock:10, cantidad:1, img: `../MultiMedia/msi-z590.png`},
+    {id: 3, nombre: "Tarjeta Grafica 3080", precio: 3250000, stock:4, cantidad:1, img: `../MultiMedia/3080-Ti-1.jpg`},
+    {id: 4, nombre: "Tarjeta Grafica 2060", precio: 1400000, stock:16, cantidad:1, img: `../MultiMedia/tv-2060.jpg`},
+    {id: 5, nombre: "Refrigeracion liquida corsair", precio: 600000, stock:15, cantidad:1, img: `../MultiMedia/corsair-cool.jpg`},
+    {id: 6, nombre: "Refrigeracion liquida nzxt", precio: 1000000, stock:5, cantidad:1, img: `../MultiMedia/nzxt-cool.jpg`},
 ]
 
 const bloqueProductos = document.getElementById('contenedor-productos')
 
 const carritoContenedor = document.getElementById('carrito-cont')
 
+const vaciarcart = document.getElementById('vaciar-carrito')
+
+const contadorProd = document.getElementById('contadorProd')
+
+//fin constantes
+
 let carrito = []
 
+//storage 
+
+document.addEventListener('DOMContentLoaded', () => {
+        carrito = json.parse(localStorage.getItem('carrito'))
+        subirCompra()
+})
+
+
+// agregar productos desde el js, para que en caso de actualizar codigo no se tenga que hacer uno por uno
 productos.forEach((producto) => {
     const contProducto = document.createElement('div')
     contProducto.classList.add('contenedorProducto')
@@ -120,13 +136,25 @@ productos.forEach((producto) => {
 
 })
 
+//se añade al carrito  en la consola
 const addtocart = (prodId) => {
+    const agregado = carrito.some (prod => prod.id === prodId)
+
+    if (agregado){
+        const prod = carrito.map (prod => {
+            if (prod.id === prodId){
+                prod.cantidad++
+            }
+        })
+    } else{
     const items = productos.find((prod) => prod.id === prodId)
     carrito.push(items)
-    subirCompra()
     console.log(carrito)
-}
+    }
+subirCompra()
+}   
 
+//Elimina los productos del carrito
 const quitarProducto = (prodId) => {
     const items = carrito.find((prod) => prod.id === prodId)
     const indice = carrito.indexOf(items)
@@ -134,6 +162,7 @@ const quitarProducto = (prodId) => {
     subirCompra()
 }
 
+//se añade al carrito creando un div por cada prod
 const subirCompra = () => {
     carritoContenedor.innerHTML = ""
 
@@ -143,11 +172,18 @@ const subirCompra = () => {
         div.innerHTML = `
         <p>${prod.nombre}</p>
         <p> Precio: ${prod.precio}</p>
-        <button onclick="quitarProducto(${prod.id})" class="botonProducto"><i class="fa fa-trash"></button>
+        <p> # ${prod.cantidad}</p>
+        <button onclick="quitarProducto(${prod.id})" class="botonProducto"><i class="material-symbols-outlined">delete</button>
         `
         carritoContenedor.appendChild(div)
+        localStorage.setItem('carrito', JSON.stringify(carrito))
     })
+    contadorProd.innerText = carrito.length
 }
 
-
+// vacia el carrito y por el bootstrap cierra el modal
+vaciarcart.addEventListener('click', () => {
+    carrito.length = 0
+    subirCompra()
+})
 
