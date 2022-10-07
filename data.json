@@ -1,0 +1,8 @@
+[
+    {"id": 1, "nombre": "Tarjeta Madre Asus", "precio": 950000, "stock":20, "cantidad":1, "img": "../MultiMedia/asus-prime.jpg"},
+    {"id": 2, "nombre": "Tarjeta Madre Msi", "precio": 1250000, "stock":10, "cantidad":1, "img": "../MultiMedia/msi-z590.png"},
+    {"id": 3, "nombre": "Tarjeta Grafica 3080", "precio": 3250000, "stock":4, "cantidad":1, "img": "../MultiMedia/3080-Ti-1.jpg"},
+    {"id": 4, "nombre": "Tarjeta Grafica 2060", "precio": 1400000, "stock":16, "cantidad":1, "img": "../MultiMedia/tv-2060.jpg"},
+    {"id": 5, "nombre": "Refrigeracion liquida corsair", "precio": 600000, "stock":15, "cantidad":1, "img": "../MultiMedia/corsair-cool.jpg"},
+    {"id": 6, "nombre": "Refrigeracion liquida nzxt", "precio": 1000000, "stock":5, "cantidad":1, "img": "../MultiMedia/nzxt-cool.jpg"}
+]
