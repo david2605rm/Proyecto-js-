@@ -34,7 +34,6 @@ function cargarCarritoDeLocalStorage() {
 }
 
 
-
 // agregar productos desde el js, para que en caso de actualizar codigo no se tenga que hacer uno por uno
 
 fetch(datos)
