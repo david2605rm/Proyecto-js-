@@ -111,7 +111,6 @@ const agregado = carrito.some (prod => prod.id === prodId)
                     carritoContenedor.appendChild(div)    
                 })
             contadorProd.innerText = carrito.length
-        
     }
 
     // vacia el carrito y por el bootstrap cierra el modal
